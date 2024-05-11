@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace F19FKP_HFT_2023242.Repository
 {
-    internal class CarRepository
+    public class CarRepository
     {
+
     }
 }

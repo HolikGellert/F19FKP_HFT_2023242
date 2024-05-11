@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace F19FKP_HFT_2023242.Repository
 {
-    public class RepairRepository
+    internal interface IRepository<T> where T : class
     {
 
     }

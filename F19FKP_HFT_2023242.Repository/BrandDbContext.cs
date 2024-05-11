@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace F19FKP_HFT_2023242.Repository
 {
-    internal class BrandDbContext : DbContext
+    public class BrandDbContext : DbContext
     {
         public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Car> Cars { get; set; }
