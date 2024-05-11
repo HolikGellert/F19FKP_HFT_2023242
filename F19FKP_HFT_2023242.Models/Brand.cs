@@ -12,7 +12,7 @@ using System.Text.Json.Serialization;
 
 namespace F19FKP_HFT_2023242.Models
 {
-    internal class Brand
+    public class Brand
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

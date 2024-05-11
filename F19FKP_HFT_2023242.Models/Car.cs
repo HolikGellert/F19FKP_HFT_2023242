@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 
 namespace F19FKP_HFT_2023242.Models
 {
-    internal class Car
+    public class Car
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

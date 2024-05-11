@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 
 namespace F19FKP_HFT_2023242.Models
 {
-    internal class Repair
+    public class Repair
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
