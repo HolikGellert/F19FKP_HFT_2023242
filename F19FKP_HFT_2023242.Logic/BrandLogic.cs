@@ -3,8 +3,10 @@ using F19FKP_HFT_2023242.Models;
 using F19FKP_HFT_2023242.Repository;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace F19FKP_HFT_2023242.Logic
@@ -53,6 +55,60 @@ namespace F19FKP_HFT_2023242.Logic
         public void Update(Brand brand)
         {
             this.repository.Update(brand);
+        }
+
+
+
+
+        public IQueryable<Repair> RepairsFromYear(int year)
+        {
+            var repairlist = from brand in repository.ReadAll()
+                           from car in brand.Cars
+                           from repair in car.Repairs
+                           where repair.Date.Year == year
+                           select repair;
+            return repairlist;
+        }
+
+        public IQueryable<Car> AllCarsFromBrand(string brandName)
+        {
+            var cars = from brand in repository.ReadAll()
+                         where brand.Name == brandName
+                         from car in brand.Cars
+                         select car;
+            return cars;
+        }
+
+        public IQueryable<Car> CarsByColor(string color)
+        {
+            var cars = from brand in repository.ReadAll()
+                       from car in brand.Cars
+                       where string.Equals(car.Color, color, StringComparison.OrdinalIgnoreCase)
+                       select car;
+            return cars;
+        }
+
+        public Repair MostExpensiveRepairFromBrand(string brandName)
+        {
+            var mostExpensiveRepairs = from brand in repository.ReadAll()
+                                from car in brand.Cars
+                                from repair in car.Repairs
+                                where brand.Name == brandName
+                                orderby repair.Cost descending
+                                select repair; 
+            return mostExpensiveRepairs.First();
+        }
+
+        public IQueryable<Car> SameWheelDriveCars(string wheelDriveName)
+        {
+            var sameWD = from brand in repository.ReadAll()
+                                     from car in brand.Cars
+                                     where string.Equals(
+                                         car.WheelDrive,
+                                         wheelDriveName,
+                                         StringComparison.OrdinalIgnoreCase)
+                                     select car;
+            return sameWD;
         }
     }
 }
