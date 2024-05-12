@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Humanizer.In;
 using F19FKP_HFT_2023242.Models;
 using System.Threading;
 
@@ -51,19 +50,20 @@ namespace F19FKP_HFT_2023242.Repository
 
             var cars = new List<Car>();
 
-            cars.Add(new Car() { CarId = 1, Name = "Supra", BrandId = 1 });
-            cars.Add(new Car() { CarId = 2, Name = "Corolla", BrandId = 1 });
-            cars.Add(new Car() { CarId = 3, Name = "Rav4", BrandId = 1 });
+            cars.Add(new Car() { CarId = 1, Name = "Supra", BrandId = 1, Color = "Red", WheelDrive = "RWD" });
+            cars.Add(new Car() { CarId = 2, Name = "Corolla", BrandId = 1, Color = "Blue", WheelDrive = "FWD" });
+            cars.Add(new Car() { CarId = 3, Name = "Rav4", BrandId = 1, Color = "Silver", WheelDrive = "AWD" });
 
-            cars.Add(new Car() { CarId = 4, Name = "Golf", BrandId = 2 });
-            cars.Add(new Car() { CarId = 5, Name = "Passat", BrandId = 2 });
-            cars.Add(new Car() { CarId = 6, Name = "Tiguan", BrandId = 2 });
+            cars.Add(new Car() { CarId = 4, Name = "Golf", BrandId = 2, Color = "Black", WheelDrive = "FWD" });
+            cars.Add(new Car() { CarId = 5, Name = "Passat", BrandId = 2, Color = "White", WheelDrive = "FWD" });
+            cars.Add(new Car() { CarId = 6, Name = "Tiguan", BrandId = 2, Color = "Gray", WheelDrive = "AWD" });
 
-            cars.Add(new Car() { CarId = 7, Name = "F-150", BrandId = 3 });
-            cars.Add(new Car() { CarId = 8, Name = "Mustang", BrandId = 3 });
+            cars.Add(new Car() { CarId = 7, Name = "F-150", BrandId = 3, Color = "Blue", WheelDrive = "4WD" });
+            cars.Add(new Car() { CarId = 8, Name = "Mustang", BrandId = 3, Color = "Yellow", WheelDrive = "RWD" });
 
-            cars.Add(new Car() { CarId = 9, Name = "Civic", BrandId = 4 });
-            cars.Add(new Car() { CarId = 10, Name = "CR-V", BrandId = 4 });
+            cars.Add(new Car() { CarId = 9, Name = "Civic", BrandId = 4, Color = "Red", WheelDrive = "FWD" });
+            cars.Add(new Car() { CarId = 10, Name = "CR-V", BrandId = 4, Color = "Green", WheelDrive = "AWD" });
+
 
 
             var repairs = new List<Repair>();

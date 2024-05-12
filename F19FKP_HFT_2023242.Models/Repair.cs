@@ -14,15 +14,8 @@ namespace F19FKP_HFT_2023242.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RepairId { get; set; }
-
-        [Required]
         public DateTime Date { get; set; }
-
-        [Required]
-        [StringLength(300)]
         public string Description { get; set; }
-
-        [Required]
         public double Cost { get; set; }
 
         [ForeignKey(nameof(Car))]
@@ -30,7 +23,5 @@ namespace F19FKP_HFT_2023242.Models
         [NotMapped]
         [JsonIgnore]
         public virtual Car Car { get; set; }
-
-        
     }
 }

@@ -17,11 +17,7 @@ namespace F19FKP_HFT_2023242.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BrandId { get; set; }
-
-        [Required]
-        [StringLength(100)]
         public string Name { get; set; }
-        [StringLength(100)]
         public string CountryOfOrigin { get; set; }
 
         [NotMapped]

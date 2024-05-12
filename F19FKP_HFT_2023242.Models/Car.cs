@@ -14,10 +14,9 @@ namespace F19FKP_HFT_2023242.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CarId { get; set; }
-        [Required]
-        [StringLength(100)]
         public string Name { get; set; }
-        
+        public string Color { get; set; }
+        public string WheelDrive { get; set; }
         [ForeignKey(nameof(Brand))]
         public int BrandId { get; set; }
         [NotMapped]

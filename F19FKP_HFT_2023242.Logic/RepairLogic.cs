@@ -18,29 +18,37 @@ namespace F19FKP_HFT_2023242.Logic
             this.repository = repository;
         }
 
-        public void Create(Repair item)
+        public void Create(Repair repair)
         {
-            throw new NotImplementedException();
+            if (repair.Cost < 0 || repair.Date <= DateTime.MinValue || repair.Date <= DateTime.MaxValue || repair.Description.Length <= 0)
+            {
+                throw new ArgumentException();
+            }
+            this.repository.Create(repair);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            if (repository.Read(id) == null)
+            {
+                throw new Exception();
+            }
+            this.repository.Delete(id);
         }
 
         public Repair Read(int id)
         {
-            throw new NotImplementedException();
+            return this.repository.Read(id);
         }
 
         public IQueryable<Repair> ReadAll()
         {
-            throw new NotImplementedException();
+            return this.repository.ReadAll();
         }
 
         public void Update(Repair repair)
         {
-            throw new NotImplementedException();
+            this.repository.Update(repair);
         }
     }
 }

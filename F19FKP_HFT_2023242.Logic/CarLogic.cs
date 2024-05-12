@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace F19FKP_HFT_2023242.Logic
@@ -18,29 +19,37 @@ namespace F19FKP_HFT_2023242.Logic
             this.repository = repository;
         }
 
-        public void Create(Car item)
+        public void Create(Car car)
         {
-            throw new NotImplementedException();
+            if (car.Name == null)
+            {
+                throw new Exception();
+            }
+            this.repository.Create(car);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            if (repository.Read(id) == null)
+            {
+                throw new Exception();
+            }
+            this.repository.Delete(id);
         }
 
         public Car Read(int id)
         {
-            throw new NotImplementedException();
+            return this.repository.Read(id);
         }
 
         public IQueryable<Car> ReadAll()
         {
-            throw new NotImplementedException();
+            return this.repository.ReadAll();
         }
 
         public void Update(Car car)
         {
-            throw new NotImplementedException();
+            this.repository.Update(car);
         }
     }
 }

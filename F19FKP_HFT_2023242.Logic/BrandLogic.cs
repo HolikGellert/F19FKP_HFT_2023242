@@ -18,29 +18,41 @@ namespace F19FKP_HFT_2023242.Logic
             this.repository = repository;
         }
 
-        public void Create(Brand item)
+        public void Create(Brand brand)
         {
-            throw new NotImplementedException();
+            if (brand.Name.Length > 99 || brand.Name.Length < 0)
+            {
+                throw new ArgumentException();
+            }
+            else if (brand.CountryOfOrigin == null || brand.CountryOfOrigin == "")
+            {
+                throw new Exception();
+            }
+            this.repository.Create(brand);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            if (repository.Read(id) == null)
+            {
+                throw new Exception();
+            }
+            this.repository.Delete(id);
         }
 
         public Brand Read(int id)
         {
-            throw new NotImplementedException();
+            return this.repository.Read(id);
         }
 
         public IQueryable<Brand> ReadAll()
         {
-            throw new NotImplementedException();
+            return this.repository.ReadAll();
         }
 
         public void Update(Brand brand)
         {
-            throw new NotImplementedException();
+            this.repository.Update(brand);
         }
     }
 }
