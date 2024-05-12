@@ -1,19 +1,21 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using F19FKP_HFT_2023242.Logic;
+using F19FKP_HFT_2023242.Logic.Interfaces;
+using F19FKP_HFT_2023242.Models;
+using F19FKP_HFT_2023242.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using F19FKP_HFT_2023242.Models;
-using F19FKP_HFT_2023242.Repository;
-using F19FKP_HFT_2023242.Logic;
-using F19FKP_HFT_2023242.Logic.Interfaces;
-using Castle.Core.Configuration;
-using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Diagnostics;
 
 
 namespace F19FKP_HFT_2023242.Endpoint
