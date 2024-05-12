@@ -26,7 +26,13 @@ namespace F19FKP_HFT_2023242.Logic
             {
                 throw new ArgumentException();
             }
-            else if (brand.CountryOfOrigin == null || brand.CountryOfOrigin == "")
+
+            if (brand.CountryOfOrigin == null || brand.CountryOfOrigin == "")
+            {
+                throw new Exception();
+            }
+
+            if (brand.Name == null || brand.Name == "")
             {
                 throw new Exception();
             }

@@ -9,7 +9,7 @@ namespace F19FKP_HFT_2023242.Client
         static RestService RestService;
         static void Main(string[] args)
         {
-            RestService = new RestService("http://localhost:14582/", "Brand");
+            RestService = new RestService("http://localhost:14582/");
             CrudService crud = new CrudService(RestService);
             NonCrudService noncrud = new NonCrudService(RestService);
 

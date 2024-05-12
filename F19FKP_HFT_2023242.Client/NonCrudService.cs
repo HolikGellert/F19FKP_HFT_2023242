@@ -22,7 +22,7 @@ namespace F19FKP_HFT_2023242.Client
             try
             {
                 Console.WriteLine("Please enter a year:");
-                string year = Console.ReadLine();
+                int year = Int32.Parse(Console.ReadLine());
                 var items = restService.Get<Repair>($"/NonCrud/RepairsFromYear/{year}");
                 foreach (var item in items)
                 {
