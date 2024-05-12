@@ -58,6 +58,17 @@ namespace F19FKP_HFT_2023242.Endpoint
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "F19FKP_HFT_2023242.Endpoint v1"));
+                app.Use(async (context, next) =>
+                {
+                    if (context.Request.Path == "/")
+                    {
+                        context.Response.Redirect("/swagger");
+                    }
+                    else
+                    {
+                        await next();
+                    }
+                });
             }
 
             app.UseExceptionHandler(c => c.Run(async context =>
