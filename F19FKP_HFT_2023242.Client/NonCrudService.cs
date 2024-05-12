@@ -47,7 +47,7 @@ namespace F19FKP_HFT_2023242.Client
                 var items = restService.Get<Car>($"/NonCrud/AllCarsFromBrand/{brand}");
                 foreach (var item in items)
                 {
-                    Console.WriteLine(item.Brand + "\t" + item.Name + "\t" + item.Color);
+                    Console.WriteLine(brand.ToString()+ "\t" + item.Name + "\t" + item.Color);
                 }
             }
             catch (Exception)
@@ -85,15 +85,14 @@ namespace F19FKP_HFT_2023242.Client
                 Console.WriteLine("Please enter a brand from the following list:\n" +
                     "[Toyota, Volkswagen, Honda, Ford]");
                 string brand = Console.ReadLine();
-                var items = restService.Get<Car>($"/NonCrud/MostExpensiveRepairFromBrand/{brand}");
+                var items = restService.Get<Repair>($"/NonCrud/MostExpensiveRepairFromBrand/{brand}");
                 foreach (var item in items)
                 {
-                    Console.WriteLine(item.Brand + "\t" + item.Name + "\t" + item.Color);
+                    Console.WriteLine(item.Description + "\t" + item.Cost);
                 }
             }
             catch (Exception)
             {
-
                 Console.WriteLine("Error! Brand not found!");
             }
             Console.WriteLine("\nPress any button to return");

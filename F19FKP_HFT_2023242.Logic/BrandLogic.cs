@@ -102,7 +102,7 @@ namespace F19FKP_HFT_2023242.Logic
                                 where brand.Name == brandName
                                 orderby repair.Cost descending
                                 select repair; 
-            return mostExpensiveRepairs.First();
+            return mostExpensiveRepairs.FirstOrDefault();
         }
 
         public IQueryable<Car> SameWheelDriveCars(string wheelDriveName)
