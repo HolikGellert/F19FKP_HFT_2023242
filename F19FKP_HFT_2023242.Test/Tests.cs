@@ -42,7 +42,7 @@ namespace F19FKP_HFT_2023242.Test
             car.Color = "Blue";
             car.WheelDrive = "4WD";
             car.Repairs = new List<Repair>();
-            car.BrandId = 2;
+            car.BrandId = 1;
 
             repair = new Repair();
             repair.Date = new DateTime(2018, 11, 21);
@@ -55,9 +55,9 @@ namespace F19FKP_HFT_2023242.Test
             brand.Cars.Add(car);
 
             Car car2 = new Car();
-            car2.Name = "Altima";
+            car2.Name = "CX-50";
             car2.Color = "Green";
-            car2.WheelDrive = "FWD";
+            car2.WheelDrive = "AWD";
             car2.Repairs = new List<Repair>();
             car2.BrandId = 4;
 
@@ -113,6 +113,82 @@ namespace F19FKP_HFT_2023242.Test
             repairLogic.Create(testrepair);
             mockRepairRepository.Verify(w => w.Create(testrepair), Times.Once);
             Assert.IsNotNull(testrepair);
+        }
+
+
+
+        [Test]
+        public void AllCarsFromBrandTest()
+        {
+            string testBrand = "Nissan";
+
+            var result = brandLogic.AllCarsFromBrand(testBrand);
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.All(c => c.BrandId==1));
+        }
+
+        [Test]
+        public void RepairsFromYearTest()
+        {
+            int testYear = 2020;
+
+            var result = brandLogic.RepairsFromYear(testYear);
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.All(r => r.Date.Year == testYear));
+        }
+
+        [Test]
+        public void CarsByColorTest()
+        {
+            string testColor = "Green";
+
+            var result = brandLogic.CarsByColor(testColor);
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.All(c => string.Equals(c.Color, testColor, StringComparison.OrdinalIgnoreCase)));
+        }
+
+        [Test]
+        public void MostExpensiveRepairFromBrandTest()
+        {
+            string testBrand = "Mazda";
+
+            var result = brandLogic.MostExpensiveRepairFromBrand(testBrand);
+
+            Assert.AreEqual(result.Cost,5500);
+        }
+
+        [Test]
+        public void SameWheelDriveCarsTest()
+        {
+            string testWheelDrive = "AWD";
+
+            var result = brandLogic.SameWheelDriveCars(testWheelDrive);
+
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.All(c => string.Equals(c.WheelDrive, testWheelDrive, StringComparison.OrdinalIgnoreCase)));
+        }
+
+        [Test]
+        public void AllCarsFromBrand2_ExpectedFalseTest()
+        {
+            string falsebrandTest = "Nonexistent carbrand*";
+            var result = brandLogic.AllCarsFromBrand(falsebrandTest);
+
+            Assert.IsEmpty(result);
+        }
+
+        [Test]
+        public void CarsByColor2_ExpectedFalseTest()
+        {
+            string falseColorTest = "Nonexistent color*";
+
+            var result = brandLogic.CarsByColor(falseColorTest);
+
+            Assert.IsNotNull(result);
+            Assert.IsFalse(result.Any());
         }
     }
 }
