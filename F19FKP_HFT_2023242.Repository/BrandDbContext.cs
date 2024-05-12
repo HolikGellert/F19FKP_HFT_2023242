@@ -73,30 +73,30 @@ namespace F19FKP_HFT_2023242.Repository
             repairs.Add(new Repair() { RepairId = 2, Date = new DateTime(2023, 6, 20), Description = "Brake Pad Replacement", Cost = 150.00, CarId = 2 });
             repairs.Add(new Repair() { RepairId = 3, Date = new DateTime(2023, 3, 10), Description = "Tire Rotation", Cost = 30.00, CarId = 2 });
 
-            repairs.Add(new Repair() { RepairId = 4, Date = new DateTime(2023, 8, 5), Description = "Battery Replacement", Cost = 100.00, CarId = 3 });
+            repairs.Add(new Repair() { RepairId = 4, Date = new DateTime(2023, 8, 5), Description = "Battery Replacement", Cost = 40.00, CarId = 3 });
             repairs.Add(new Repair() { RepairId = 5, Date = new DateTime(2023, 1, 18), Description = "Air Filter Replacement", Cost = 20.00, CarId = 3 });
-            repairs.Add(new Repair() { RepairId = 6, Date = new DateTime(2023, 10, 22), Description = "Spark Plug Change", Cost = 50.00, CarId = 3 });
+            repairs.Add(new Repair() { RepairId = 6, Date = new DateTime(2023, 10, 22), Description = "Spark Plug Change", Cost = 70.00, CarId = 3 });
 
-            repairs.Add(new Repair() { RepairId = 7, Date = new DateTime(2023, 4, 18), Description = "Engine Tune-Up", Cost = 20.00, CarId = 4 });
-            repairs.Add(new Repair() { RepairId = 8, Date = new DateTime(2023, 5, 2), Description = "Coolant Flush", Cost = 50.00, CarId = 4 });
+            repairs.Add(new Repair() { RepairId = 7, Date = new DateTime(2023, 4, 18), Description = "Engine Tune-Up", Cost = 80.00, CarId = 4 });
+            repairs.Add(new Repair() { RepairId = 8, Date = new DateTime(2023, 5, 2), Description = "Coolant Flush", Cost = 30.00, CarId = 4 });
 
-            repairs.Add(new Repair() { RepairId = 9, Date = new DateTime(2023, 2, 12), Description = "Transmission Fluid Change", Cost = 20.00, CarId = 5 });
-            repairs.Add(new Repair() { RepairId = 10, Date = new DateTime(2023, 3, 1), Description = "Wheel Alignment", Cost = 50.00, CarId = 5 });
+            repairs.Add(new Repair() { RepairId = 9, Date = new DateTime(2023, 2, 12), Description = "Transmission Fluid Change", Cost = 40.00, CarId = 5 });
+            repairs.Add(new Repair() { RepairId = 10, Date = new DateTime(2023, 3, 1), Description = "Wheel Alignment", Cost = 70.00, CarId = 5 });
 
-            repairs.Add(new Repair() { RepairId = 11, Date = new DateTime(2023, 4, 11), Description = "Brake Fluid Flush", Cost = 20.00, CarId = 6 });
-            repairs.Add(new Repair() { RepairId = 12, Date = new DateTime(2023, 6, 5), Description = "Timing Belt Replacement", Cost = 50.00, CarId = 6 });
+            repairs.Add(new Repair() { RepairId = 11, Date = new DateTime(2023, 4, 11), Description = "Brake Fluid Flush", Cost = 30.00, CarId = 6 });
+            repairs.Add(new Repair() { RepairId = 12, Date = new DateTime(2023, 6, 5), Description = "Timing Belt Replacement", Cost = 110.00, CarId = 6 });
 
-            repairs.Add(new Repair() { RepairId = 13, Date = new DateTime(2023, 7, 15), Description = "Suspension Repair", Cost = 20.00, CarId = 7 });
-            repairs.Add(new Repair() { RepairId = 14, Date = new DateTime(2023, 9, 28), Description = "Exhaust System Repair", Cost = 50.00, CarId = 7 });
+            repairs.Add(new Repair() { RepairId = 13, Date = new DateTime(2023, 7, 15), Description = "Suspension Repair", Cost = 130.00, CarId = 7 });
+            repairs.Add(new Repair() { RepairId = 14, Date = new DateTime(2023, 9, 28), Description = "Exhaust System Repair", Cost = 100.00, CarId = 7 });
 
-            repairs.Add(new Repair() { RepairId = 15, Date = new DateTime(2023, 10, 20), Description = "Wheel Bearing Replacement", Cost = 20.00, CarId = 8 });
+            repairs.Add(new Repair() { RepairId = 15, Date = new DateTime(2023, 10, 20), Description = "Wheel Bearing Replacement", Cost = 60.00, CarId = 8 });
             repairs.Add(new Repair() { RepairId = 16, Date = new DateTime(2023, 11, 23), Description = "Fuel Injector Cleaning", Cost = 50.00, CarId = 8 });
 
-            repairs.Add(new Repair() { RepairId = 17, Date = new DateTime(2023, 2, 26), Description = "Ignition Coil Replacement", Cost = 20.00, CarId = 9 });
-            repairs.Add(new Repair() { RepairId = 18, Date = new DateTime(2023, 6, 19), Description = "Power Steering Fluid Flush", Cost = 50.00, CarId = 9 });
+            repairs.Add(new Repair() { RepairId = 17, Date = new DateTime(2023, 2, 26), Description = "Ignition Coil Replacement", Cost = 200.00, CarId = 9 });
+            repairs.Add(new Repair() { RepairId = 18, Date = new DateTime(2023, 6, 19), Description = "Power Steering Fluid Flush", Cost = 40.00, CarId = 9 });
 
-            repairs.Add(new Repair() { RepairId = 19, Date = new DateTime(2023, 3, 18), Description = "Serpentine Belt Replacement", Cost = 20.00, CarId = 10 });
-            repairs.Add(new Repair() { RepairId = 20, Date = new DateTime(2023, 8, 12), Description = "Headlight Bulb Replacement", Cost = 50.00, CarId = 10 });
+            repairs.Add(new Repair() { RepairId = 19, Date = new DateTime(2023, 3, 18), Description = "Serpentine Belt Replacement", Cost = 120.00, CarId = 10 });
+            repairs.Add(new Repair() { RepairId = 20, Date = new DateTime(2023, 8, 12), Description = "Headlight Bulb Replacement", Cost = 80.00, CarId = 10 });
 
 
             modelBuilder.Entity<Brand>().HasData(brands);
