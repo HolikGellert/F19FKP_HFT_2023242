@@ -35,7 +35,7 @@ namespace F19FKP_HFT_2023242.Client
                 .Add("RepairsFromYear", () => noncrud.RepairsFromYear())
                 .Add("AllCarsFromBrand", () => noncrud.AllCarsFromBrand())
                 .Add("CarsByColor", () => noncrud.CarsByColor())
-                .Add("MostExpensiveRepairFromBrand", () => noncrud.MostExpensiveRepairFromBrand())
+                .Add("MostExpensiveRepair", () => noncrud.MostExpensiveRepair())
                 .Add("SameWheelDriveCars", () => noncrud.SameWheelDriveCars())
                 .Add("Exit", ConsoleMenu.Close);
             var menu = new ConsoleMenu(args, level: 0)

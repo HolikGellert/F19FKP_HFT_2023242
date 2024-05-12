@@ -45,7 +45,7 @@ namespace F19FKP_HFT_2023242.Test
             car.BrandId = 1;
 
             repair = new Repair();
-            repair.Date = new DateTime(2018, 11, 21);
+            repair.Date = "2018.11.21";
             repair.Description = "New rear wheels";
             repair.Cost = 10000;
             repair.CarId = 2;
@@ -67,7 +67,7 @@ namespace F19FKP_HFT_2023242.Test
             brand2.Cars = new List<Car>();
 
             Repair repair2 = new Repair();
-            repair2.Date = new DateTime(2020, 01, 22);
+            repair2.Date = "2020.01.22";
             repair2.Description = "Engine fine tuning";
             repair2.Cost = 5500;
             repair2.CarId = 1;
@@ -109,7 +109,7 @@ namespace F19FKP_HFT_2023242.Test
         [Test]
         public void RepairCreateTest()
         {
-            Repair testrepair = new Repair() { Date = new DateTime(2021,11,21), Cost=1000, Description="New engine block" };
+            Repair testrepair = new Repair() { Date = "2021.11.21", Cost=1000, Description="New engine block" };
             repairLogic.Create(testrepair);
             mockRepairRepository.Verify(w => w.Create(testrepair), Times.Once);
             Assert.IsNotNull(testrepair);
@@ -136,7 +136,7 @@ namespace F19FKP_HFT_2023242.Test
             var result = brandLogic.RepairsFromYear(testYear);
 
             Assert.IsNotNull(result);
-            Assert.IsTrue(result.All(r => r.Date.Year == testYear));
+            Assert.IsTrue(result.All(r => r.Date.Substring(0, Math.Min(r.Date.Length, 4)) == testYear.ToString()));
         }
 
         [Test]
@@ -151,13 +151,11 @@ namespace F19FKP_HFT_2023242.Test
         }
 
         [Test]
-        public void MostExpensiveRepairFromBrandTest()
+        public void MostExpensiveRepairTest()
         {
-            string testBrand = "Mazda";
+            var result = brandLogic.MostExpensiveRepair();
 
-            var result = brandLogic.MostExpensiveRepairFromBrand(testBrand);
-
-            Assert.AreEqual(result.Cost,5500);
+            Assert.AreEqual(result.Cost,10000);
         }
 
         [Test]

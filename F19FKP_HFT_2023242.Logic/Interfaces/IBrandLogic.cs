@@ -19,7 +19,7 @@ namespace F19FKP_HFT_2023242.Logic.Interfaces
         public IQueryable<Repair> RepairsFromYear(int year);
         public IQueryable<Car> AllCarsFromBrand(string brandName);
         public IQueryable<Car> CarsByColor(string color);
-        public Repair MostExpensiveRepairFromBrand(string brandName);
+        public Repair MostExpensiveRepair();
         public IQueryable<Car> SameWheelDriveCars(string wheelDriveName);
     }
 }

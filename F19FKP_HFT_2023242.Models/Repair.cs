@@ -14,9 +14,9 @@ namespace F19FKP_HFT_2023242.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RepairId { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string Description { get; set; }
-        public double Cost { get; set; }
+        public int Cost { get; set; }
 
         [ForeignKey(nameof(Car))]
         public int CarId { get; set; }

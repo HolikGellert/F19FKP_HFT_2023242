@@ -71,7 +71,7 @@ namespace F19FKP_HFT_2023242.Logic
             var repairlist = from brand in repository.ReadAll()
                            from car in brand.Cars
                            from repair in car.Repairs
-                           where repair.Date.Year == year
+                           where repair.Date.Substring(0, Math.Min(repair.Date.Length, 4)) == year.ToString()
                            select repair;
             return repairlist;
         }
@@ -94,12 +94,11 @@ namespace F19FKP_HFT_2023242.Logic
             return cars;
         }
 
-        public Repair MostExpensiveRepairFromBrand(string brandName)
+        public Repair MostExpensiveRepair()
         {
             var mostExpensiveRepairs = from brand in repository.ReadAll()
                                 from car in brand.Cars
                                 from repair in car.Repairs
-                                where brand.Name == brandName
                                 orderby repair.Cost descending
                                 select repair; 
             return mostExpensiveRepairs.FirstOrDefault();

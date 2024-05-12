@@ -26,7 +26,7 @@ namespace F19FKP_HFT_2023242.Client
                 var items = restService.Get<Repair>($"/NonCrud/RepairsFromYear/{year}");
                 foreach (var item in items)
                 {
-                    Console.WriteLine(item.Date.ToString() + "\t" + item.Description);
+                    Console.WriteLine(item.Date + "\t" + item.Description);
                 }
                 Console.ReadLine();
             }
@@ -78,22 +78,17 @@ namespace F19FKP_HFT_2023242.Client
             Console.WriteLine("\nPress any button to return");
             Console.ReadKey();
         }
-        public void MostExpensiveRepairFromBrand()
+        public void MostExpensiveRepair()
         {
             try
             {
-                Console.WriteLine("Please enter a brand from the following list:\n" +
-                    "[Toyota, Volkswagen, Honda, Ford]");
-                string brand = Console.ReadLine();
-                var items = restService.Get<Repair>($"/NonCrud/MostExpensiveRepairFromBrand/{brand}");
-                foreach (var item in items)
-                {
-                    Console.WriteLine(item.Description + "\t" + item.Cost);
-                }
+                Console.WriteLine("Most expensive repair in the brand:");
+                var item = restService.GetSingle<Repair>($"/NonCrud/MostExpensiveRepair/");
+                Console.WriteLine("Repair: " + item.RepairId + "\t" + item.Cost + "\t" + item.Description);
             }
             catch (Exception)
             {
-                Console.WriteLine("Error! Brand not found!");
+                Console.WriteLine("Error!");
             }
             Console.WriteLine("\nPress any button to return");
             Console.ReadKey();

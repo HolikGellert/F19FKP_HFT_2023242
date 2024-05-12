@@ -20,7 +20,7 @@ namespace F19FKP_HFT_2023242.Logic
 
         public void Create(Repair repair)
         {
-            if (repair.Cost < 0 || repair.Date <= DateTime.MinValue || repair.Date >= DateTime.MaxValue || repair.Description.Length <= 0)
+            if (repair.Cost < 0 || repair.Description.Length <= 0 || repair.Date.Length <= 0)
             {
                 throw new ArgumentException();
             }

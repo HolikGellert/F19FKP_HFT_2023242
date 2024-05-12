@@ -30,10 +30,10 @@ namespace F19FKP_HFT_2023242.Endpoint.Controllers
         {
             return logic.CarsByColor(color);
         }
-        [HttpGet("{brandName}")]
-        public Repair MostExpensiveRepairFromBrand(string brandName)
+        [HttpGet]
+        public Repair MostExpensiveRepair()
         {
-            return logic.MostExpensiveRepairFromBrand(brandName);
+            return logic.MostExpensiveRepair();
         }
         [HttpGet("{wheelDriveName}")]
         public IQueryable<Car> SameWheelDriveCars(string wheelDriveName)
